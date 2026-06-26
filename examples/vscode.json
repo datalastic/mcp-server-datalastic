@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "datalastic": {
+      "type": "http",
+      "url": "https://mcp.datalastic.com/mcp",
+      "headers": {
+        "X-Api-Key": "YOUR_API_KEY"
+      }
+    }
+  }
+}
