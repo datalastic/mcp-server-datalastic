@@ -21,7 +21,7 @@ The server runs at `mcp.datalastic.com` — no local installation required.
 
 ## Getting Started
 
-### Sign in with your Datalastic account *(recommended)*
+### Sign in with your Datalastic account
 
 No API key needed. Just add `https://mcp.datalastic.com/mcp` as the server URL in your client with no headers or credentials. When you connect, your client will automatically open a browser window to sign in with your Datalastic account. Once you approve, you're connected — the client handles everything else.
 
