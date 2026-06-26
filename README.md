@@ -21,44 +21,31 @@ The server runs at `mcp.datalastic.com` — no local installation required.
 
 ## Getting Started
 
-### Option A — Sign in with your Datalastic account *(recommended)*
+### Sign in with your Datalastic account *(recommended)*
 
 No API key needed. Just add `https://mcp.datalastic.com/mcp` as the server URL in your client with no headers or credentials. When you connect, your client will automatically open a browser window to sign in with your Datalastic account. Once you approve, you're connected — the client handles everything else.
 
 To disconnect, use the disconnect option in your MCP client or revoke access from your [Datalastic account settings](https://datalastic.com).
 
-### Option B — API key
+### API key
 
-Sign up at [datalastic.com/pricing](https://datalastic.com/pricing/) and subscribe to a plan. Your API key is delivered by email and visible in your account dashboard. Then configure your MCP client manually using the examples below.
+Sign up at [datalastic.com/pricing](https://datalastic.com/pricing/) and subscribe to a plan. Your API key is delivered by email and visible in your account dashboard.
 
-**Server URL:** `https://mcp.datalastic.com/mcp`  
-**Authentication:** `X-Api-Key` request header
-
-Pick your client below.
+For clients that support custom request headers in their config file, use the examples in the [Client Configuration](#client-configuration) section below. For Claude Code, use the CLI command instead.
 
 ---
 
 ## Client Configuration
 
-### Claude Desktop
+### Claude Code
 
-Edit your config file:
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+Run this command to add the server with your API key:
 
-```json
-{
-  "mcpServers": {
-    "datalastic": {
-      "type": "http",
-      "url": "https://mcp.datalastic.com/mcp",
-      "headers": {
-        "X-Api-Key": "YOUR_API_KEY"
-      }
-    }
-  }
-}
 ```
+claude mcp add --scope user --transport http datalastic https://mcp.datalastic.com/mcp --header "X-Api-Key: YOUR_API_KEY"
+```
+
+For Claude Desktop, use OAuth (sign in with your Datalastic account above) — custom header authentication via config file is not yet supported.
 
 ### Cursor
 
