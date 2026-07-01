@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.datalastic/vessel-tracking",
+  "title": "Datalastic Vessel Tracking & Maritime Intelligence",
+  "description": "Vessel tracking for 750,000+ ships, with ownership, inspections, port records, routes, and more.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/datalastic/mcp-server-datalastic",
+    "source": "github"
+  },
+  "homepage": "https://mcp.datalastic.com/welcome/claude.html",
+  "license": "MIT",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.datalastic.com/mcp",
+      "headers": [
+        {
+          "name": "X-Api-Key",
+          "description": "Your Datalastic API key. Not required if authenticating via OAuth.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
