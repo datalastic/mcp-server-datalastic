@@ -3,6 +3,7 @@
 Official [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for [Datalastic](https://datalastic.com) — real-time vessel tracking, port data, marine weather, and maritime intelligence for any MCP-compatible AI client.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![MCP Badge](https://lobehub.com/badge/mcp/com-datalastic-vessel-tracking)](https://lobehub.com/mcp/com-datalastic-vessel-tracking)
 
 ## Overview
 
