@@ -132,58 +132,48 @@ Header: X-Api-Key: YOUR_API_KEY
 
 13 tools are available to all plans. 11 additional tools become available with the **Maritime Reports** add-on.
 
-### Vessel Tracking
+**Vessel Tracking**
 
-| Tool | Description |
-|------|-------------|
-| `get_vessel` | Live position, speed, heading, and navigation status for a single vessel |
-| `get_vessel_pro` | Like `get_vessel` plus recognized destination port, ETA, actual departure time, and draught |
-| `get_vessel_info` | Static specifications: dimensions, tonnage, cargo capacity, year built, flag, callsign |
-| `find_vessels` | Search the registry by name, type, flag, tonnage, or dimensions |
-| `get_vessels_bulk` | Live positions for up to 100 vessels in one call |
-| `get_vessel_history` | Historical AIS track for a vessel (data available since 2021-08-10) |
+- `get_vessel` - Live position, speed, heading, and navigation status for a single vessel
+- `get_vessel_pro` - Like `get_vessel` plus recognized destination port, ETA, actual departure time, and draught
+- `get_vessel_info` - Static specifications: dimensions, tonnage, cargo capacity, year built, flag, callsign
+- `find_vessels` - Search the registry by name, type, flag, tonnage, or dimensions
+- `get_vessels_bulk` - Live positions for up to 100 vessels in one call
+- `get_vessel_history` - Historical AIS track for a vessel (data available since 2021-08-10)
 
 > **Choosing the right vessel tool:** start with `get_vessel` for a live position. Use `get_vessel_pro` only when you need the destination port, ETA, or draught.
 
-### Ports
+**Ports**
 
-| Tool | Description |
-|------|-------------|
-| `find_ports` | Search the port registry by name, UN/LOCODE, country, type, or coordinates |
-| `get_port` | Full port detail including terminals, operators, addresses, and coordinates |
+- `find_ports` - Search the port registry by name, UN/LOCODE, country, type, or coordinates
+- `get_port` - Full port detail including terminals, operators, addresses, and coordinates
 
-### Area & Weather
+**Area & Weather**
 
-| Tool | Description |
-|------|-------------|
-| `get_vessels_in_radius` | All vessels currently within a radius (max 50 NM) of a point, port, or vessel |
-| `get_weather` | Marine weather at any location — current conditions and/or a 7-day forecast |
+- `get_vessels_in_radius` - All vessels currently within a radius (max 50 NM) of a point, port, or vessel
+- `get_weather` - Marine weather at any location — current conditions and/or a 7-day forecast
 
-### Maritime Intelligence *(Maritime Reports add-on)*
+**Maritime Intelligence** *(Maritime Reports add-on)*
 
-| Tool | Description |
-|------|-------------|
-| `intel_ownership` | Beneficial owner, operator, technical and commercial manager, P&I club |
-| `intel_inspections` | Port State Control inspection records — detentions and deficiencies |
-| `intel_casualties` | Recorded incidents: groundings, collisions, fires, machinery failures |
-| `intel_drydock` | Next dry-dock date, special-survey date, and IOPP certificate expiry |
-| `intel_class` | Classification society, principal dimensions, and next survey dates |
-| `intel_engine` | Main engine model, builder, propulsion type, and maximum continuous output |
-| `intel_spd` | Sale-and-purchase and demolition transactions — buyer, seller, reported price |
-| `intel_companies` | Maritime company profiles: owners, operators, managers, and contact details |
-| `sea_route` | Schematic sea route and distance in km / NM between two ports or coordinates. For distance estimation and visualization — not for real-world navigation. |
-| `estimated_vessel_position` | Estimated current position for vessels out of terrestrial AIS range (open ocean) |
-| `intel_report_request` | Submit a full bulk export of any Maritime Reports dataset |
+- `intel_ownership` - Beneficial owner, operator, technical and commercial manager, P&I club
+- `intel_inspections` - Port State Control inspection records — detentions and deficiencies
+- `intel_casualties` - Recorded incidents: groundings, collisions, fires, machinery failures
+- `intel_drydock` - Next dry-dock date, special-survey date, and IOPP certificate expiry
+- `intel_class` - Classification society, principal dimensions, and next survey dates
+- `intel_engine` - Main engine model, builder, propulsion type, and maximum continuous output
+- `intel_spd` - Sale-and-purchase and demolition transactions — buyer, seller, reported price
+- `intel_companies` - Maritime company profiles: owners, operators, managers, and contact details
+- `sea_route` - Schematic sea route and distance in km / NM between two ports or coordinates. For distance estimation and visualization — not for real-world navigation.
+- `estimated_vessel_position` - Estimated current position for vessels out of terrestrial AIS range (open ocean)
+- `intel_report_request` - Submit a full bulk export of any Maritime Reports dataset
 
 > **Don't have the add-on?** When your plan doesn't include Maritime Reports, the `intel_info` tool appears in its place. It describes what the add-on offers and how to enable it. Once you upgrade, the intelligence tools appear automatically in the same session — no reconnect needed.
 
-### Bulk Reports *(async)*
+**Bulk Reports** *(async)*
 
-| Tool | Description |
-|------|-------------|
-| `report_request` | Submit an async export: `vessel_list`, `port_list`, `inradius_history`, or `request_usage` |
-| `report_status` | Poll a report job; returns a download URL when complete |
-| `report_list` | List your recent report jobs and statuses |
+- `report_request` - Submit an async export: `vessel_list`, `port_list`, `inradius_history`, or `request_usage`
+- `report_status` - Poll a report job; returns a download URL when complete
+- `report_list` - List your recent report jobs and statuses
 
 > Reports are generated asynchronously and can take minutes. The server returns a `result_url` to download — it never fetches the file itself. Some exports (full vessel list, area history) can be large and consume API credits.
 
