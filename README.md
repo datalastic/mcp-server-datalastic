@@ -130,7 +130,7 @@ Header: X-Api-Key: YOUR_API_KEY
 
 ## Tools
 
-13 tools are available to all plans. 11 additional tools become available with the **Maritime Reports** add-on.
+All 25 tools are always listed in your client. The Maritime Intelligence tools require the **Maritime Reports** add-on; everything else is available on every plan.
 
 **Vessel Tracking**
 
@@ -166,8 +166,9 @@ Header: X-Api-Key: YOUR_API_KEY
 - `sea_route` - Schematic sea route and distance in km / NM between two ports or coordinates. For distance estimation and visualization — not for real-world navigation.
 - `estimated_vessel_position` - Estimated current position for vessels out of terrestrial AIS range (open ocean)
 - `intel_report_request` - Submit a full bulk export of any Maritime Reports dataset
+- `intel_info` - Your Maritime Reports add-on status, what the add-on includes, and how to enable it *(available on all plans)*
 
-> **Don't have the add-on?** When your plan doesn't include Maritime Reports, the `intel_info` tool appears in its place. It describes what the add-on offers and how to enable it. Once you upgrade, the intelligence tools appear automatically in the same session — no reconnect needed.
+> **Don't have the add-on?** Calling a Maritime Intelligence tool without the Maritime Reports add-on returns a message explaining that the add-on is required — `intel_info` shows your status and how to enable it. Upgrades take effect immediately in the same session, no reconnect needed.
 
 **Bulk Reports** *(async)*
 
@@ -175,7 +176,7 @@ Header: X-Api-Key: YOUR_API_KEY
 - `report_status` - Poll a report job; returns a download URL when complete
 - `report_list` - List your recent report jobs and statuses
 
-> Reports are generated asynchronously and can take minutes. The server returns a `result_url` to download — it never fetches the file itself. Some exports (full vessel list, area history) can be large and consume API credits.
+> Reports are generated asynchronously and can take minutes. The server returns a `result_url` to download — it never fetches the file itself. Download links are signed URLs valid for 6 hours; checking the report status again issues a fresh link at any time, free, without regenerating the export. Some exports (full vessel list, area history) can be large and consume API credits.
 
 ---
 
