@@ -1,6 +1,6 @@
 # Datalastic MCP Server
 
-Official [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for [Datalastic](https://datalastic.com) — real-time vessel tracking, port data, marine weather, and maritime intelligence for any MCP-compatible AI client.
+Official [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for [Datalastic](https://datalastic.com) — real-time vessel tracking, port data, maritime weather, and maritime intelligence for any MCP-compatible AI client.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![MCP Badge](https://lobehub.com/badge/mcp/com-datalastic-vessel-tracking)](https://lobehub.com/mcp/com-datalastic-vessel-tracking)
@@ -13,7 +13,7 @@ The Datalastic MCP server exposes **25 tools** across six categories:
 - **Vessel registry** — specs, dimensions, flag, and tonnage for 750,000+ vessels
 - **Port data** — global port and terminal directory with UN/LOCODEs
 - **Area search** — all vessels currently within a radius of any point or port
-- **Marine weather** — current conditions and 7-day forecasts at any location
+- **Maritime weather** — wave, swell, and sea conditions merged with atmospheric weather, with 7-day forecasts at any coordinates, port, or vessel
 - **Maritime intelligence** *(Maritime Reports add-on)* — ownership, inspections, casualties, dry dock, engine specs, sale & purchase transactions
 
 The server runs at `mcp.datalastic.com` — no local installation required.
@@ -140,6 +140,7 @@ All 25 tools are always listed in your client. The Maritime Intelligence tools r
 - `find_vessels` - Search the registry by name, type, flag, tonnage, or dimensions
 - `get_vessels_bulk` - Live positions for up to 100 vessels in one call
 - `get_vessel_history` - Historical AIS track for a vessel (data available since 2021-08-10)
+- `get_vessels_in_radius` - All vessels currently within a radius (max 50 NM) of a point, port, or vessel
 
 > **Choosing the right vessel tool:** start with `get_vessel` for a live position. Use `get_vessel_pro` only when you need the destination port, ETA, or draught.
 
@@ -148,10 +149,9 @@ All 25 tools are always listed in your client. The Maritime Intelligence tools r
 - `find_ports` - Search the port registry by name, UN/LOCODE, country, type, or coordinates
 - `get_port` - Full port detail including terminals, operators, addresses, and coordinates
 
-**Area & Weather**
+**Maritime Weather**
 
-- `get_vessels_in_radius` - All vessels currently within a radius (max 50 NM) of a point, port, or vessel
-- `get_weather` - Marine weather at any location — current conditions and/or a 7-day forecast
+- `get_weather` - One complete weather picture: marine conditions (waves, swell, currents, sea surface temperature) merged with atmospheric conditions (wind, temperature, visibility, pressure). Works at fixed coordinates, at a port, or around a vessel, resolving to the ship's last known position. Returns current conditions plus 7-day daily and hourly forecasts
 
 **Maritime Intelligence** *(Maritime Reports add-on)*
 
@@ -188,6 +188,8 @@ Where is the MSC Oscar right now and what is its destination?
 Show me all tankers within 20 nautical miles of Rotterdam.
 
 What is the weather forecast at the Port of Singapore for the next 7 days?
+
+What are the wave and wind conditions around the Ever Given right now?
 
 Who is the beneficial owner of IMO 9839179?
 
